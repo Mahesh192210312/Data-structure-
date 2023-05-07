@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<conio.h>
+//function to swap elements
+void swap(int *a,int *b)
+{
+int temp =*a;
+*a=*b;
+*b =temp;
+}
+//bubble sort function
+void bubblesort(int array[],int n)
+{
+int i,j;
+for(i=0;i<n-1;i++)
+for(j=0;j<n-i-1;j++)
+if (array[j]>array[j+1])
+swap(&array[j],&array[j+1]);
+}
+//function to print the element of an array
+void printArray(int array[],int size)
+{
+int i;
+for(i=0;i<size;i++)
+printf("%d",array[i]);
+printf("\n");
+}
+//Main function
+int main()
+{
+int array[]={3,7,12,45,75,87,23};
+int size= sizeof(array)/sizeof(array[0]);
+clrscr();
+bubblesort(array,size);
+printf("sorted array:\n");
+printArray(array,size);
+getch();
+return 0;
+}
