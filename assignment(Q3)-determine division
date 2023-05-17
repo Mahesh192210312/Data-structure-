@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int total_marks[7];
+    int i, total = 0;
+    float percentage;
+
+    printf("Enter total marks of student in seven subjects: \n");
+
+    // Reading total marks of student in seven subjects
+    for(i = 0; i < 7; i++) {
+        printf("Enter marks of subject %d: ", i+1);
+        scanf("%d", &total_marks[i]);
+        total += total_marks[i];
+    }
+
+    // Calculating percentage
+    percentage = ((float) total / 700) * 100;
+
+    // Determining division based on percentage
+    if (percentage >= 60) {
+        printf("First Division");
+    } else if (percentage >= 45) {
+        printf("Second Division");
+    } else if (percentage >= 33) {
+        printf("Third Division");
+    } else {
+        printf("Fail");
+    }
+
+    printf("\nPercentage: %.2f%%\n", percentage);
+
+    return 0;
+}
